@@ -3,18 +3,17 @@
  * @param {number} val
  * @return {number}
  */
-function removeElement(nums,val){
-    let k = 0
 
+function removeElement(nums,val){
+    let result = []
     for(let i=0; i<nums.length; i++){
         if(nums[i]!==val){
-
-            nums[k]=nums[i]
-            k++
+            result.push(nums[i])
         }
     }
- return k
+    for(let i=0; i<nums.length; i++){
+        nums[i]=result[i]
+    }
+    return result.length
 }
-nums = [0,1,2,2,3,0,4,2]
-val = 2
-console.log(removeElement(nums,val))
+console.log(removeElement([3,2,2,3],3))
